@@ -1,5 +1,5 @@
 ```
-REST corresponds to rest.mathter.com
-WCF corresponds to wcf.mathter.com
+REST corresponds to (rest.mathter.com)
+WCF corresponds to (wcf.mathter.com)
 
 ```
