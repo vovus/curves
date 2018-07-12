@@ -1,0 +1,7 @@
+﻿<DataTable>
+<enumbasis><Id>5</Id><Name>30/360 (Bond Basis)</Name></enumbasis>
+<enumbasis><Id>1</Id><Name>Actual/360</Name></enumbasis>
+<enumbasis><Id>2</Id><Name>Actual/365 (Fixed)</Name></enumbasis>
+<enumbasis><Id>3</Id><Name>Actual/Actual (ISDA)</Name></enumbasis>
+<enumbasis><Id>4</Id><Name>Business/252</Name></enumbasis>
+</DataTable>

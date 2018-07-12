@@ -1,0 +1,204 @@
+
+08/08/2012
+----------
+
+- sqlite browser: sqlitebrowser.sorceforge.net 
+
+- sqlite: new connection/begintrandaction to get bond info (GetBond()) from getyieldcurevehistory population (where the 1st connection created)
+leads to database lock
+
+- sqlite: add user/password notion to db3 file (or use different files for different users)
+
+- add mysql -> sqlite convertion routines to SVN (this TODO.txt, my2lite.sh, resulted db3 file)
+  a) original link http://www.jbip.net/content/how-convert-mysql-sqlite
+  b) from win CMD do:
+      D:\HOME\New folder\SQLITE>mysqldump -u root -p --compatible=ansi --skip-opt qlc > qlc.dump
+      where 'qlc' is name of schema to dump, 'root' is an administrator name for mysql
+      
+  c) from cygwin cmd do:
+      $ ./my2lite.sh qlc.dump
+      
+  the contect of ./my2lite.sh:
+
+8<-------------------
+#!/usr/bin/bash
+if [ "x$1" == "x" ]; then
+  echo "Usage: $0 <dumpname>"
+  exit
+fi
+
+cat $1 |
+grep -v ' KEY "' |
+grep -v ' UNIQUE KEY "' |
+grep -v ' PRIMARY KEY ' |
+sed '/^SET/d' |
+sed 's/ unsigned / /g' |
+sed 's/ auto_increment/ primary key autoincrement/g' |
+sed 's/ smallint([0-9]*) / integer /g' |
+sed 's/ tinyint([0-9]*) / integer /g' |
+sed 's/ int([0-9]*) / integer /g' |
+sed 's/ character set [^ ]* / /g' |
+sed 's/ enum([^)]*) / varchar(255) /g' |
+sed 's/ on update [^,]*//g' |
+sed 's/\\r\\n/\\n/g' |
+sed 's/\\"/"/g' |
+perl -e 'local $/;$_=<>;s/,\n\)/\n\)/gs;print "begin;\n";print;print "commit;\n"' |
+perl -pe '
+if (/^(INSERT.+?)\(/) {
+  $a=$1;
+  s/\\'\''/'\'\''/g;
+  s/\\n/\n/g;
+  s/\),\(/\);\n$a\(/g;
+}
+' > $1.sql
+cat $1.sql | sqlite3 $1.db > $1.err
+ERRORS=`cat $1.err | wc -l`
+if [ $ERRORS == 0 ]; then
+  echo "Conversion completed without error. Output file: $1.db"
+  rm $1.sql
+  rm $1.err
+else
+  echo "There were errors during conversion.  Please review $1.err and $1.sql for details."
+fi
+8<----------------------------------
+
+- have changed Nominal reading of Bond (in mySQL, SQLite, LinqXML) from Int32 to Double: 
+
+Nominal = reader.IsDBNull(reader.GetOrdinal("Nominal")) ? 0 : reader.GetDouble(reader.GetOrdinal("Nominal")),
+
+- add excel entry points datafeed (add both "load" for data feed and "save" for results buttons)
+
+- make values for entry rates table editable
+
+a) define rate
+b) add/remove rates from entry table
+c) add/remove values for entry table rates (value displayed is the closest to one on the top)
+d) set dates to calculate discounts
+						
+						
+11/08/12
+========
+
+ccy icons/flags: http://flags.redpixart.com/japan/rectangular_icon/
+
+14/08/12
+========
+
+excel export/import on client in-browser: http://excellite.codeplex.com/
+
+16/08/12
+========
+
+silverlight client side database: http://sterling.codeplex.com/
+
+or consider using excel/access (COM / non-COM)
+
+SQLite client-side silverlight: http://forums.silverlight.net/t/118411.aspx
+
+port to windows7 mobile
+
+
+24/04/13
+========
+
+in SQLite - to fix table's IDs - open SQL browser admin tool and edit the column making it autoincrement
+
+
+02/05/13
+========
+
+Register/Login scenario:
+========================
+
+1. create an user account - do it by web-site or using API call 
+
+bool CreateUser(string name, string pass);
+
+where name is email where the confirmation code will be sent, after competion the registration
+this email will be used as the name to login onto the site
+
+2. check email used as the name during the registration and either click the link provided to complete the registration (confirming it) or call
+
+bool ConfirmUser(string code);
+
+where the code is the code from confirmation e-mail
+
+3. login to the site using either web-site or by API:
+
+bool LoginUser(string name, string pass);
+
+DataFeed scenario:
+==================
+
+1. if you don't login, you will work in 'demo' mode, you won't be able to upload your historic data or modify/add the entry points, but you will 
+still have possibility to modify entry point's data in SilverLight web-interface (DataFeed tab), but those data won't be stored on the server
+
+2. if you register and login you will get possibility to upload your personal historic data and add/modify entry points, then use 
+service to calculate your dicount factors and zero coupons based on those data
+
+bool LoginUser(string name, string pass) - to login
+
+ResponseInitData InitData() - to get list of Currencies, Rates (swap/deposits) and Bonds used as referencies for EntryPoints (in fact you don't need to 
+loged in for this call - you will get here preset demo data, it will be in future dev. to allow user to create/modify own Instruments (Bonds,
+Swaps, Deposits)
+
+ResponseGetAllEntryPoints GetAllEntryPoints(bool isDemo) - to get all entry points for particular user (previously loged in) if isDemo == false
+
+void GetEntryPointByInstrumentIdAndType(ref EntryPoint ep) - Instrument Id and Type (from InitData()) can be used here to get EntryPoint using 
+that instrument for reference
+
+void UpdateEntryPoint(EntryPoint ep) - save modifications to EntryPoint
+
+void AddEntryPoint(EntryPoint ep) - add new EntryPoint, but predefined Instrument (as from InitData()) must be used as a reference, it will be 
+future dev. to allow reference custom instruments 
+TODO: check that valid instrument is referencied
+
+void AddEntryPointHistory(List<EntryPoint> epl) - provide list EntryPoints with value/date for historic data, here EntryPoint need only Id, 
+Value and Date to be specified.
+TODO: check that entry point is a valid one
+
+public ResponseEntryPointHistory GetEntryPointHistoryList(DateTime settlementDate, long? idYc) - to get all historic EntryPoints on/before 
+the settlementDate (in past or present/latest)
+
+ResponseDiscountsList CalculateDiscountedRateList(YieldCurveData ycd, DateTime settlementDate, HashSet<DateTime> discountDates, bool ifToDraw) - to get 
+all the calculations based on provided EntryPoints
+
+
+a) to get all rates / bonds (e.g. Market Instruments) used as reference points:
+
+ResponseInitData InitData();
+
+inside will be list of all Instruments (rates, bonds) - cast to either Bond or Rate to get detailed instrument information
+
+b) to find EntryPoints corresponding to particular Instrument (rate, bond) use the following:
+
+ResponseEntryPointsByInstrument GetEntryPointByInstrument(Instrument instr);
+(Error message in response will warning you if not authenticated - Demo read-only mode is On)
+
+c) to get ALL EntryPoints:
+
+ResponseGetAllEntryPointsData GetAllEntryPoints(bool isDemo);
+(Error message in response will warning you if not authenticated - Demo read-only mode is On)
+
+d) when you about to calculate discount/forward rates based on your EntryPoints or Update/Add EntryPoint you will need to specify 
+yieldCurveId which is reference to the predifined Yield Curve settings. To get all such settings (along with their Id to be used by EntryPoints):
+
+ResponseYieldCurveDefinition GetYieldCurveDefinitions();
+(TODO: make it configurable by user in the future)
+
+e) to Add/Modify entry points - by Instrument.Id find the match to the Instrument (Rate or Bond) used as reference to this entry point and whose historic
+data you will put into EntryPoint. Also set YieldCurveId to the Id of the YieldCurveDefinition you will be assigning this EntryPoint:
+
+ResponseAddEntryPointHistory AddEntryPointHistory(List<EntryPoint> epl);
+ResponseUpdateEntryPoint UpdateEntryPoint(EntryPoint ep);
+(Error message in response will warning you if not authenticated - Demo read-only mode is On)
+
+f) to add historic data:
+
+ResponseAddEntryPointHistory AddEntryPointHistory(List<EntryPoint> epl);
+(see Notes from e))
+
+g) to calculate:
+
+ResponseDiscountedData CalculateDiscountedData(YieldCurveDefinition ycDef, DateTime settlementDate, List<EntryPoint> entryPoints, List<DateTime> discountDates);
+(see Notes from e)) 

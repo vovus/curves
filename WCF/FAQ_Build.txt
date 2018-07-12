@@ -1,0 +1,76 @@
+UPDATE:
+=======
+- local build: all projects (including SL) are x86 / win32
+- ones server reference is added to SL and SL is built then change SL to AnyCPU and build again
+- then change SL its ServicesReferences.ClientConfig ../YieldCurveSrv.svc to point to http://localhost:33333/YieldCurveSrv.svc and build SL again
+- then change localhost:33333 to web URL and build again, copy .xap to hosting
+
+
+deployment on www.fincurve.com (THERE IS NO VC++ 2010 Runtime Redistributable):
+
+- build server part in VC9 / x86 / Release, deploy along with web.config on www.fincurve.com
+- build client (SL) part in VC10 / AnyCPU / Release, when adding service reference, use http://www.fincurve.com/YieldCurveSrv.svc
+- when adding SL page to BlogEngine use www.fincurve.com as URL in HTML editor <form> part related to SL
+
+- add the following into Global.apsx of BlogEngine (initialization method at the end) 
+
+FinancialLayer.QuantLibAdaptor.Init();
+
+4004 error on silverlight on startup - rebuild SL project (remove/add service reference and rebuild)
+
+deploymnet (local) of BlogEngine:
+
+- to resolve permission issue on App_Data open properties of App_Data and add write access to IIS_IUSRS on this folder 
+
+- silverlight controll shows no data - using Fiddler Web Debugger have found that .png mentioned in .xaml is missing (VS debuggin was fine)
+
+Parser Error Message: Could not create type
+
+	on 64 bit change yieldcurveweb proj to MixedCpu (in the top of VS toolbar)
+
+silverlight add service reference object not set instance
+
+	open solution file in notepad and remove dependency from wcf (if changed to aspx)
+
+to hit breakpoint in SL
+
+	set IE as default browser
+
+on x64 machines:
+
+	for IIS deployment build as AnyCPU (make sure that managed c++ should be built in x64 mode, or force app-pool to x32)
+
+Configuring apache server:
+
+apache + mod_mono.so (copied from installation of mono under win)
+php
+
+	/test moved from mono install to HOME, test in original location left empty, cant' remove due to access violation error
+	/htdocs moved from apache install to HOME with link left in original place
+	http.conf changed to reflect those changes
+
+FileNotFound Exceptin on deployment - build as Release .. and if built as x86 then bind to the application pool with .net 4.0 and 32bit allowed + install VC++10 Redistributable package (x86, x64)
+
+Object reference not set to instance of an object when adding service reference to SL: open solution file (.sln) in notepad, locate SL-project and remove
+ProjectSection(ProjectDependencies) = postProject
+		{7F067A1E-9531-4114-854D-69DE14B6F5CA} = {7F067A1E-9531-4114-854D-69DE14B6F5CA}
+	EndProjectSection
+	
+	
+http://www.falconwebtech.com/post/2010/12/28/Debugging-Classic-ASP-in-IIS7-and-VS2010.aspx
+Debuggin on IIS: - in IIS manager open ASP icon and allow debugging features (set all to true) .. select application pool, click on "advanced settings"
+and change identity to network service
+
+!!!!!!!!
+IF doesn't work on remote hosting - try to mess with web.config and client.config, use wcfTestClient.exe from VC10 command prompt to test 
+wcf services and to check client.config .. also remove all 'crap' from web.config which is not in <system.serviceModel> and <connectionString>
+!!!!!!!!
+
+blogEngine test login admin/admin
+
+
+//
+// JavaScript
+//
+
+to debug JS in VS make IE the default browser + enable script debugging in IE settings

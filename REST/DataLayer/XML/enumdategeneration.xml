@@ -1,0 +1,9 @@
+﻿<DataTable>
+<enumdategeneration><Id>1</Id><Name>Backward</Name></enumdategeneration>
+<enumdategeneration><Id>7</Id><Name>CDS</Name></enumdategeneration>
+<enumdategeneration><Id>2</Id><Name>Forward</Name></enumdategeneration>
+<enumdategeneration><Id>6</Id><Name>OldCDS</Name></enumdategeneration>
+<enumdategeneration><Id>3</Id><Name>ThirdWednesday</Name></enumdategeneration>
+<enumdategeneration><Id>4</Id><Name>Twentieth</Name></enumdategeneration>
+<enumdategeneration><Id>5</Id><Name>TwentiethIMM</Name></enumdategeneration>
+</DataTable>

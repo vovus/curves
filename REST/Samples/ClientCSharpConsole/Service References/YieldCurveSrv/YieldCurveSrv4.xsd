@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DataLayer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DataLayer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Bond">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Coupon" type="xs:double" />
+          <xs:element minOccurs="0" name="CouponBasisId" type="xs:int" />
+          <xs:element minOccurs="0" name="CouponConvention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CouponFrequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateGeneration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaturityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Nominal" type="xs:double" />
+          <xs:element minOccurs="0" name="Redemption" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Bond" nillable="true" type="tns:Bond" />
+  <xs:complexType name="Instrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calendar" nillable="true" type="tns:Calendar" />
+      <xs:element minOccurs="0" name="DataProviderId" type="xs:int" />
+      <xs:element minOccurs="0" name="DataReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdCcy" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SettlementDays" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Instrument" nillable="true" type="tns:Instrument" />
+  <xs:complexType name="Calendar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MarketName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Calendar" nillable="true" type="tns:Calendar" />
+  <xs:complexType name="Currency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FractionSymbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FractionsPerUnit" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumericCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Symbol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Currency" nillable="true" type="tns:Currency" />
+  <xs:complexType name="DayCounter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DayCounter" nillable="true" type="tns:DayCounter" />
+  <xs:complexType name="ArrayOfEntryPointHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntryPointHistory" nillable="true" type="tns:EntryPointHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntryPointHistory" nillable="true" type="tns:ArrayOfEntryPointHistory" />
+  <xs:complexType name="EntryPointHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntryPoint">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="epValueHistory" nillable="true" type="tns:ArrayOfHistoricValue" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntryPointHistory" nillable="true" type="tns:EntryPointHistory" />
+  <xs:complexType name="EntryPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataProviderId" type="xs:int" />
+      <xs:element minOccurs="0" name="DataReference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Instrument" nillable="true" type="tns:Instrument" />
+      <xs:element minOccurs="0" name="Length" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeUnit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidDateBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidDateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="YieldCurveId" type="xs:int" />
+      <xs:element minOccurs="0" name="epValue" nillable="true" type="tns:HistoricValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EntryPoint" nillable="true" type="tns:EntryPoint" />
+  <xs:complexType name="HistoricValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Value" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoricValue" nillable="true" type="tns:HistoricValue" />
+  <xs:complexType name="ArrayOfHistoricValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoricValue" nillable="true" type="tns:HistoricValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoricValue" nillable="true" type="tns:ArrayOfHistoricValue" />
+  <xs:complexType name="Rate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Accuracy" type="xs:int" />
+          <xs:element minOccurs="0" name="BasisId" type="xs:int" />
+          <xs:element minOccurs="0" name="BasisIndexId" type="xs:int" />
+          <xs:element minOccurs="0" name="BusinessDayConvention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClassNameIndex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Compounding" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompoundingIndex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" type="xs:int" />
+          <xs:element minOccurs="0" name="FixingPlace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Frequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FrequencyIndex" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdIndex" type="xs:int" />
+          <xs:element minOccurs="0" name="IndexDuration" type="xs:int" />
+          <xs:element minOccurs="0" name="IndexName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IndexTimeUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Spread" type="xs:double" />
+          <xs:element minOccurs="0" name="SpreadIndex" type="xs:double" />
+          <xs:element minOccurs="0" name="TimeUnit" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rate" nillable="true" type="tns:Rate" />
+  <xs:complexType name="ExchangeRate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FixingPlace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryCurrencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="SecondaryCurrencyId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExchangeRate" nillable="true" type="tns:ExchangeRate" />
+  <xs:complexType name="YieldCurveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="discountPointList" nillable="true" type="tns:ArrayOfDiscountPoint" />
+      <xs:element minOccurs="0" name="entryPointList" nillable="true" type="tns:ArrayOfEntryPoint" />
+      <xs:element minOccurs="0" name="settings" nillable="true" type="tns:YieldCurveSetting" />
+      <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="YieldCurveData" nillable="true" type="tns:YieldCurveData" />
+  <xs:complexType name="ArrayOfDiscountPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiscountPoint" nillable="true" type="tns:DiscountPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiscountPoint" nillable="true" type="tns:ArrayOfDiscountPoint" />
+  <xs:complexType name="DiscountPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="discount" type="xs:double" />
+      <xs:element minOccurs="0" name="discountDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fwdRate" type="xs:double" />
+      <xs:element minOccurs="0" name="zcRate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiscountPoint" nillable="true" type="tns:DiscountPoint" />
+  <xs:complexType name="ArrayOfEntryPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EntryPoint" nillable="true" type="tns:EntryPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEntryPoint" nillable="true" type="tns:ArrayOfEntryPoint" />
+  <xs:complexType name="YieldCurveSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Calendar" nillable="true" type="tns:Calendar" />
+      <xs:element minOccurs="0" name="FrwBasisId" type="xs:int" />
+      <xs:element minOccurs="0" name="FrwColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrwCompounding" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrwFrequency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrwTerm" type="xs:int" />
+      <xs:element minOccurs="0" name="FrwTermBase" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpreadFamily" type="xs:int" />
+      <xs:element minOccurs="0" name="SpreadSize" type="xs:double" />
+      <xs:element minOccurs="0" name="SpreadType" type="xs:int" />
+      <xs:element minOccurs="0" name="ZCColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZcBasisId" type="xs:int" />
+      <xs:element minOccurs="0" name="ZcCompounding" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZcFrequency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ifFrw" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ifZc" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="YieldCurveSetting" nillable="true" type="tns:YieldCurveSetting" />
+  <xs:complexType name="ArrayOfYieldCurveFamily">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="YieldCurveFamily" nillable="true" type="tns:YieldCurveFamily" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfYieldCurveFamily" nillable="true" type="tns:ArrayOfYieldCurveFamily" />
+  <xs:complexType name="YieldCurveFamily">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="YieldCurveFamily" nillable="true" type="tns:YieldCurveFamily" />
+  <xs:complexType name="ArrayOfInstrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Instrument" nillable="true" type="tns:Instrument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInstrument" nillable="true" type="tns:ArrayOfInstrument" />
+  <xs:complexType name="InflationBond">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Coupon" type="xs:double" />
+          <xs:element minOccurs="0" name="CouponBasisId" type="xs:int" />
+          <xs:element minOccurs="0" name="CouponConvention" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CouponFrequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateGeneration" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InflationIndexId" type="xs:int" />
+          <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="MaturityDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Nominal" type="xs:double" />
+          <xs:element minOccurs="0" name="Redemption" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InflationBond" nillable="true" type="tns:InflationBond" />
+  <xs:complexType name="InflationCurveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InflationIndexId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="settings" nillable="true" type="tns:InflationCurveSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflationCurveData" nillable="true" type="tns:InflationCurveData" />
+  <xs:complexType name="InflationCurveSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IndexColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZCColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZcBasisId" type="xs:int" />
+      <xs:element minOccurs="0" name="ZcCompounding" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZcFrequency" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ifIndex" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ifZc" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflationCurveSetting" nillable="true" type="tns:InflationCurveSetting" />
+  <xs:complexType name="InflationCurveEntryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Duration" type="xs:int" />
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InflationCurveId" type="xs:int" />
+      <xs:element minOccurs="0" name="Instrument" nillable="true" type="tns:Instrument" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidDateBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidDateEnd" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflationCurveEntryData" nillable="true" type="tns:InflationCurveEntryData" />
+  <xs:complexType name="InflationIndex">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InflationIndex" nillable="true" type="tns:InflationIndex" />
+  <xs:complexType name="InflationRate">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Instrument">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Accuracy" type="xs:int" />
+          <xs:element minOccurs="0" name="BasisId" type="xs:int" />
+          <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Compounding" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CompoundingId" type="xs:int" />
+          <xs:element minOccurs="0" name="Duration" type="xs:int" />
+          <xs:element minOccurs="0" name="Frequency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FrequencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="InflationCurveId" type="xs:int" />
+          <xs:element minOccurs="0" name="InflationIndexId" type="xs:int" />
+          <xs:element minOccurs="0" name="InflationLag" type="xs:int" />
+          <xs:element minOccurs="0" name="InflationLagTimeUnit" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SettlementLag" type="xs:int" />
+          <xs:element minOccurs="0" name="Spread" type="xs:double" />
+          <xs:element minOccurs="0" name="TimeUnit" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InflationRate" nillable="true" type="tns:InflationRate" />
+  <xs:complexType name="RateHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Close" type="xs:double" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="High" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Low" type="xs:double" />
+      <xs:element minOccurs="0" name="Open" type="xs:double" />
+      <xs:element minOccurs="0" name="RateId" type="xs:int" />
+      <xs:element minOccurs="0" name="Theoretical" type="xs:double" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RateHistory" nillable="true" type="tns:RateHistory" />
+  <xs:complexType name="InflationCurveSnapshot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+      <xs:element minOccurs="0" name="EntryList" nillable="true" type="tns:ArrayOfInflationCurveEntryData" />
+      <xs:element minOccurs="0" name="Family" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IndexHistory" nillable="true" type="tns:ArrayOfHistoricValue" />
+      <xs:element minOccurs="0" name="InflationIndex" nillable="true" type="tns:InflationIndex" />
+      <xs:element minOccurs="0" name="InflationIndexId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ValueList" nillable="true" type="q1:ArrayOfdouble" />
+      <xs:element minOccurs="0" name="settings" nillable="true" type="tns:InflationCurveSetting" />
+      <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InflationCurveSnapshot" nillable="true" type="tns:InflationCurveSnapshot" />
+  <xs:complexType name="ArrayOfInflationCurveEntryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InflationCurveEntryData" nillable="true" type="tns:InflationCurveEntryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInflationCurveEntryData" nillable="true" type="tns:ArrayOfInflationCurveEntryData" />
+  <xs:complexType name="ArrayOfCurrency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Currency" nillable="true" type="tns:Currency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCurrency" nillable="true" type="tns:ArrayOfCurrency" />
+</xs:schema>

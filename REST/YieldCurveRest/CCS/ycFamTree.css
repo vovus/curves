@@ -1,0 +1,117 @@
+﻿#ycFamTree ul,
+#ycFamTree li
+
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ 
+#ycFamTree input
+{
+    position: absolute;
+    opacity: 0;
+}
+ 
+#ycFamTree
+{
+    font: normal 11px "Segoe UI", Arial, Sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+ 
+#ycFamTree a
+{
+    color: #00f;
+    text-decoration: none;
+}
+ 
+#ycFamTree a:hover
+{
+    text-decoration: underline;
+}
+ 
+#ycFamTree input + label + ul
+{
+    margin: 0 0 0 22px;
+}
+ 
+#ycFamTree input ~ ul
+{
+    display: none;
+}
+ 
+#ycFamTree label,
+#ycFamTree label::before
+{
+    cursor: pointer;
+}
+ 
+#ycFamTree input:disabled + label
+{
+    cursor: default;
+    opacity: .6;
+}
+ 
+#ycFamTree input:checked:not(:disabled) ~ ul
+{
+    display: block;
+}
+ 
+#ycFamTree label,
+#ycFamTree label::before
+{
+    background: url("../HTML/icons.png") no-repeat;
+}
+ 
+#ycFamTree label,
+#ycFamTree a,
+#ycFamTree label::before
+{
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+ 
+#ycFamTree label
+{
+    background-position: 18px 0;
+}
+ 
+#ycFamTree label::before
+{
+    content: "";
+    width: 16px;
+    margin: 0 22px 0 0;
+    vertical-align: middle;
+    background-position: 0 -32px;
+}
+ 
+#ycFamTree input:checked + label::before
+{
+    background-position: 0 -16px;
+}
+ 
+/* webkit adjacent element selector bugfix */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+    #ycFamTree 
+    {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+ 
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix 
+    {
+        from 
+        { 
+            padding: 0;
+        } 
+        to 
+        { 
+            padding: 0;
+        }
+    }
+}
+

@@ -1,0 +1,146 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<%@ Import Namespace="BlogEngine.Core" %>
+<%@ Import Namespace="UserAccounts" %>
+
+<%@ Register Src="SidePanel.ascx" TagName="SidePanel" TagPrefix="uc1" %>
+<%@ Register Src="LeftSidePanel.ascx" TagName="LeftSidePanel" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <title>iTheme</title>
+    <link rel="stylesheet" href="default.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="dbx.css" type="text/css" media="screen, projection" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div id="thepage">
+        <div id="wrapper">
+            <div id="header">
+                <h1>
+                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/" runat="server">
+                        <%=BlogSettings.Instance.Name %>
+                    </asp:HyperLink></h1>
+                <div class="description">
+                    <%=BlogSettings.Instance.Description %></div>
+					<blog:SearchBox ID="SearchBox1" runat="server" />
+                <br />
+            </div>
+            <!-- /header -->
+			
+            <div class="dbx-group" id="leftsidebar" style="display:none;">
+                <uc1:LeftSidePanel ID="LeftSidePanel1" runat="server" />
+				
+            </div>
+            <!-- /leftsidebar -->
+
+            <div id="left-col" >
+				
+				<!-- horizontal menu with horizontal sub-menu 
+				
+				<div id="nav0">
+					<ul id="top">
+					<li class="page_item">
+                            <asp:HyperLink ID="HlAbout2" NavigateUrl="/page/About.aspx" runat="server">Home</asp:HyperLink></li>
+					<li class="page_item">
+                            <asp:HyperLink ID="HyperLink2" NavigateUrl="/page/YieldCurve.aspx" runat="server">Curves</asp:HyperLink></li>
+					<li><a href="#news">Documentation</a>
+					<ul id="sub">
+						<li><a href="/page/YieldCurveDesc.aspx">Yield Curve</a></li>
+						<li><a href="#news">Forex Curve</a></li>
+					</ul></li>
+					<li class="page_item">
+                            <asp:HyperLink ID="HlHome2" NavigateUrl="~/Archive.aspx" runat="server">Latest</asp:HyperLink></li>
+					<li class="page_item">
+                            <asp:HyperLink ID="hlContact2" NavigateUrl="~/contact.aspx" runat="server">Contact us</asp:HyperLink></li>
+							
+					<li class="page_item">
+                            <asp:HyperLink ID="HlArchive2" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+					<li><a href="<%=Utils.FeedUrl %>">Subscribe</a></li>
+							
+					<li class="page_item">
+                            <asp:LoginStatus ID="LoginStatus2" runat="Server" LoginText="Sign in" LogoutText="Sign out"
+                                EnableViewState="true" /></li>
+					</ul>
+				</div>
+				
+				-->
+				
+				<div id="nav0">
+					<ul id="nav1">
+						<li class="page_item">
+                            <asp:HyperLink ID="HlAbout0" NavigateUrl="/" runat="server">Home</asp:HyperLink>
+						</li>
+						<li class="page_item">
+                            <asp:HyperLink ID="HyperLink0" NavigateUrl="/page/YieldCurve" runat="server">Curves</asp:HyperLink>
+						</li>
+						<li><a href="#news">Documentation</a>
+							<ul id="sub1">
+								<li><a href="/page/YieldCurveDesc.aspx">Yield Curve</a></li>
+								<li><a href="#news">Forex Curve</a></li>
+							</ul>
+						</li>
+						<!--
+						<li class="page_item">
+                            <asp:HyperLink ID="HlHome0" NavigateUrl="~/Archive.aspx" runat="server">Latest</asp:HyperLink>
+						</li>-->
+						<li class="page_item">
+                            <asp:HyperLink ID="hlContact0" NavigateUrl="~/contact.aspx" runat="server">Contact us</asp:HyperLink>
+						</li>
+							<!--
+						<li class="page_item">
+                            <asp:HyperLink ID="HlArchive1" NavigateUrl="~/archive.aspx" runat="server">Archive</asp:HyperLink></li>
+						<li><a href="<%=Utils.FeedUrl %>">Subscribe</a></li>
+							-->
+							
+						<!--
+						<li class="page_item">
+                            <asp:LoginStatus ID="LoginStatus1" runat="Server" LoginText="Sign in" LogoutText="Sign out"
+                                EnableViewState="true" />
+						</li>
+						-->
+						<% if (UserAccounts.Repository.sIsLogedIn) { %>
+							<li class="page_item">
+                            <asp:HyperLink ID="CustomLogin1" NavigateUrl="~/Pages/Register.aspx" runat="server">Login Test</asp:HyperLink>
+							</li>
+						<% } else { %>
+							<li class="page_item">
+                            <asp:HyperLink ID="CustomRegister1" NavigateUrl="~/Pages/Login.aspx" runat="server">Login</asp:HyperLink>
+							</li>
+						<% } %>
+						<!--
+						<li class="page_item">
+                            <asp:HyperLink ID="userLogin" NavigateUrl="~/Account/Register.aspx" runat="server">SignIn</asp:HyperLink>
+						</li>-->
+					</ul>
+				</div>
+				
+                <!-- /nav -->
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+                </div>
+				
+				<div id="footer">
+                    Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a>
+                    2.5 </div>
+            </div>
+			
+            <!--/left-col -->
+			<!--
+            <div class="dbx-group" id="sidebar">
+                <uc1:SidePanel ID="SidePanel1" runat="server" />
+            </div>
+            <!--/sidebar -->
+
+            <hr class="hidden" />
+    
+		</div>
+        <!--/wrapper -->
+    </div>
+    <!--/page -->
+    </form>
+</body>
+</html>

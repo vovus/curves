@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e47df792-d1b4-4634-830a-4e383ead1d79" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58596/YieldCurveSrv.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="YieldCurveSrv.disco" MetadataType="Disco" ID="c2ed7a29-6a52-45af-8849-6716d8b537de" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?disco" />
+    <MetadataFile FileName="YieldCurveSrv.wsdl" MetadataType="Wsdl" ID="eee4feb6-421f-46e7-bc62-b4bee0e0529d" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?wsdl" />
+    <MetadataFile FileName="YieldCurveSrv.xsd" MetadataType="Schema" ID="1c572df2-35fb-4dee-8ba9-f794342ed795" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd2" />
+    <MetadataFile FileName="YieldCurveSrv1.xsd" MetadataType="Schema" ID="b45b1a1e-7037-435f-af87-83bf98cd2c47" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd3" />
+    <MetadataFile FileName="YieldCurveSrv2.xsd" MetadataType="Schema" ID="78a34217-7b16-4ebb-8bea-3c6bb1e9afc1" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd0" />
+    <MetadataFile FileName="YieldCurveSrv3.xsd" MetadataType="Schema" ID="0bc99fda-cb3b-4f35-b4d7-719b2ec81d24" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd1" />
+    <MetadataFile FileName="YieldCurveSrv4.xsd" MetadataType="Schema" ID="2ee213f1-a738-49df-9e31-4665b1f49465" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" />
+    <MetadataFile FileName="YieldCurveSrv5.xsd" MetadataType="Schema" ID="158330ca-7b67-4623-b8e7-d4e733808fbe" SourceId="1" SourceUrl="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd5" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

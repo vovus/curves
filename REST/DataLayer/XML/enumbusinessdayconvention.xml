@@ -1,0 +1,7 @@
+﻿<DataTable>
+<enumbusinessdayconvention><Id>1</Id><Name>Following</Name></enumbusinessdayconvention>
+<enumbusinessdayconvention><Id>2</Id><Name>ModifiedFollowing</Name></enumbusinessdayconvention>
+<enumbusinessdayconvention><Id>4</Id><Name>ModifiedPreceding</Name></enumbusinessdayconvention>
+<enumbusinessdayconvention><Id>3</Id><Name>Preceding</Name></enumbusinessdayconvention>
+<enumbusinessdayconvention><Id>5</Id><Name>Unadjusted</Name></enumbusinessdayconvention>
+</DataTable>

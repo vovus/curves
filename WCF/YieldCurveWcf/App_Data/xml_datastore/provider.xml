@@ -1,0 +1,4 @@
+﻿<DataTable>
+<provider><Id>2</Id><Name>Bloomberg</Name></provider>
+<provider><Id>1</Id><Name>Reuters</Name></provider>
+</DataTable>

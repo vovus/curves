@@ -1,0 +1,5 @@
+﻿<%@ ServiceHost Language="C#" 
+Debug="true" 
+Service="YieldCurveWcf.YieldCurveSrv" 
+CodeBehind="YieldCurveSrv.svc.cs"
+ %>

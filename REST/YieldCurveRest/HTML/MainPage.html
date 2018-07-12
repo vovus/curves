@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="stylesheet" type="text/css" href="../CCS/MainPage.css">
+	<link rel="stylesheet" type="text/css" href="../CCS/ycFamTree.css">
+	<!--
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../JS/ycDashboard.js"></script>
+	-->
+
+	<!-- ccy tree + chart -->
+	<script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../JS/dygraph-combined.js"></script>
+
+	<script type="text/javascript" src="../JS/ycFamTree.js"></script>
+	<script type="text/javascript" src="../JS/ycChart.js"></script>
+
+	<!-- table/grid -->
+	<link rel="stylesheet" type="text/css" media="screen" href="../JS/Grid/jquery-ui-1.11.2.custom/jquery-ui.min.css" />
+	<script src="../JS/Grid/jquery.jqGrid-4.4.3/js/i18n/grid.locale-en.js" type="text/javascript"></script>
+	<script src="../JS/Grid/jquery.jqGrid-4.4.3/js/jquery.jqGrid.min.js" type="text/javascript"></script>
+	<!--
+	<script type="text/javascript">
+		google.load('visualization', '1.1', { packages: ['corechart', 'controls', 'table'] });
+
+		google.setOnLoadCallback(drawDashboard);
+	</script>
+	-->
+
+    <title></title>
+</head>
+<body>
+<!--
+	<div class="css-treeview">
+    <ul>
+        <li><input type="checkbox" id="USD" /><label for="USD">USD</label>
+            <ul>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+             </ul>
+		</li>
+		<li><input type="checkbox" id="EUR" checked="checked" /><label for="EUR">EUR</label>
+			<ul>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+                        <li><a href="./">Some Nested Items...</a></li>
+             </ul>
+		</li>
+		<li><input type="checkbox" id="GBP" /><label for="GBP">GBP</label>
+		     <ul>
+                        <li><a href="./">Some Nested Items...</a></li>
+             </ul>
+        </li>
+    </ul>
+</div>
+-->
+
+	<table border="1">
+		<tr>
+			<td><div id="ycFamTree" style='width: 100px; height: 300px;'></div></td>
+			<td>
+				<div id="chart_div" style='width: 915px; height: 300px;'></div>
+				<div id="grid" style='width: 100px; height: 300px;'></div>
+			</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		// ccy/yc tree
+		document.getElementById("ycFamTree").innerHTML = buildTree();
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="YieldCurveSL.RateDepositControl"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="448" Height="382"
+           xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input" >
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="377">
+        <Border  Name="borderGeneral" BorderBrush="Silver" BorderThickness="1" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Width="424" Margin="12,2,0,0">
+            <ComboBox Name="comboTer" Height="23" HorizontalContentAlignment="Right" IsEnabled="False" Padding="6,2,25,2" VerticalContentAlignment="Bottom" Width="78" />
+        </Border>
+        <dataInput:Label Name="labelTyp" Content="Type" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="16,8,0,0" VerticalAlignment="Top" Width="70" />
+        <ComboBox Name="comboTyp" Height="23" HorizontalAlignment="Right" IsEnabled="False" Margin="0,8,245,0"  VerticalAlignment="Top" Width="121" />
+        <dataInput:Label Name="labelRef" Content="Reference" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="15,38,0,0" VerticalAlignment="Top" Width="83" />
+        <TextBox Name="txtBoxRef" Height="23" HorizontalAlignment="Left" IsReadOnly="True" Margin="83,35,0,0" VerticalAlignment="Top" Width="352" SelectionBackground="#C7444444" />
+
+        <dataInput:Label Name="labelTer" Content="Term" FontWeight="Normal" Margin="15,69,389,263" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <TextBox Name="txtTer" Height="23" HorizontalAlignment="Right" IsEnabled="False" IsReadOnly="True" Margin="0,65,306,0" VerticalAlignment="Top" Width="58" />
+        <dataInput:Label Name="labelCur" Content="Currency" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="15,97,0,0"  VerticalAlignment="Top" Width="69" />
+        <ComboBox Name="comboCur" Height="23" HorizontalAlignment="Left" IsEnabled="False" Margin="83,93,0,0"  VerticalAlignment="Top" Width="121" />
+        <dataInput:Label Name="labelMar" Content="Calendar" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="15,126,0,0" VerticalAlignment="Top" Width="93" />
+        <ComboBox Name="comboMar" Height="23" HorizontalAlignment="Left" IsEnabled="False" Margin="83,122,0,0"  VerticalAlignment="Top" Width="121" />
+
+        <Border BorderBrush="Silver" BorderThickness="1" Height="211" HorizontalAlignment="Left" Margin="12,157,0,0" Name="border1" VerticalAlignment="Top" Width="206">
+            <dataInput:Label Content="Spread" FontWeight="Normal" Margin="3,170,0,0" Name="label1" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Border>
+        <TextBox Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,332,244,0" Name="textBoxSpread" SelectionBackground="#C7444444" VerticalAlignment="Top" Width="120" />
+
+        <dataInput:Label Name="labelBas" Content="Basis" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="17,221,0,0"  VerticalAlignment="Top" Width="93" />
+        <ComboBox Name="comboBas" Height="23" HorizontalAlignment="Left" IsEnabled="False" Margin="83,219,0,0"  VerticalAlignment="Top" Width="121" />
+        <dataInput:Label Name="labelMod"  Content="Mode" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="17,249,0,0" VerticalAlignment="Top" Width="93" />
+        <ComboBox  Name="comboMod" Height="23" HorizontalAlignment="Left" IsEnabled="False" IsHitTestVisible="True" Margin="84,246,0,0" VerticalAlignment="Top" Width="120" />
+        <dataInput:Label Name="labelFre" Content="Frequency" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="17,276,0,0"  VerticalAlignment="Top" Width="93" />
+        <ComboBox Name="comboFre" Height="23" HorizontalAlignment="Left" IsEnabled="False" Margin="84,273,0,0"  VerticalAlignment="Top" Width="120" />
+        <dataInput:Label Name="labelBus" Content="Convention" FontWeight="Normal" Height="18" HorizontalAlignment="Left" Margin="17,304,0,0"  VerticalAlignment="Top" Width="93" />
+        <ComboBox Name="comboBus" Height="23" HorizontalAlignment="Left" IsEnabled="False" Margin="84,301,0,0"  VerticalAlignment="Top" Width="120" />
+        <dataInput:Label Name="labelFda" Content="Fixing Days" FontWeight="Normal" Margin="17,192,339,139"  Width="93" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <TextBox Name="txtBoxFda" Height="23" HorizontalAlignment="Right" IsReadOnly="True" Margin="0,190,245,0"  SelectionBackground="#C7444444" VerticalAlignment="Top" Width="120" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,9 @@
+﻿<DataTable>
+<ycfamily><Id>1</Id><CurrencyId>20</CurrencyId><Name>EUR Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>2</Id><CurrencyId>64</CurrencyId><Name>USD Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>3</Id><CurrencyId>23</CurrencyId><Name>GBP Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>4</Id><CurrencyId>34</CurrencyId><Name>JPY Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>5</Id><CurrencyId>10</CurrencyId><Name>CHF Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>6</Id><CurrencyId>3</CurrencyId><Name>AUD Libor Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+<ycfamily><Id>7</Id><CurrencyId>20</CurrencyId><Name>EUR Sovereign Family</Name><UserCreated>1</UserCreated><IpCreated>192.168.0.0</IpCreated></ycfamily>
+</DataTable>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/YieldCurveWcf" />
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataLayer" />
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:element name="Init">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="InitResult" nillable="true" type="q1:ResponseInit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYcFamilyDataList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYcFamilyDataListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetYcFamilyDataListResult" nillable="true" type="q2:ResponseYcFamilyData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYieldCurveDataDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYieldCurveDataDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetYieldCurveDataDicResult" nillable="true" type="q3:ResponseYieldCurveData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrencyDataDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrencyDataDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetCurrencyDataDicResult" nillable="true" type="q4:ResponseCurrencyData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRateDataDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRateDataDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetRateDataDicResult" nillable="true" type="q5:ResponseRateData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBondDataDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBondDataDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetBondDataDicResult" nillable="true" type="q6:ResponseBondData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDayCounterDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDayCounterDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetDayCounterDicResult" nillable="true" type="q7:ResponseDayCounterData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntryPointHistoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idYc" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntryPointHistoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetEntryPointHistoryListResult" nillable="true" type="q8:ResponseEntryPointHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateDiscountedRateList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="ycd" nillable="true" type="q9:YieldCurveData" />
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="discountDates" nillable="true" type="q10:ArrayOfdateTime" />
+        <xs:element minOccurs="0" name="ifToDraw" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateDiscountedRateListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="CalculateDiscountedRateListResult" nillable="true" type="q11:ResponseDiscountsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExchangeRateDataDic">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExchangeRateDataDicResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetExchangeRateDataDicResult" nillable="true" type="q12:ResponseExchangeRateData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExchangeRateHistoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="idYc" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExchangeRateHistoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetExchangeRateHistoryListResult" nillable="true" type="q13:ResponseEntryPointHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaturityDatesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="instruments" nillable="true" type="q14:ArrayOfInstrument" />
+        <xs:element minOccurs="0" name="d" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaturityDatesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetMaturityDatesListResult" nillable="true" type="q15:ResponseMaturityDatesData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InflationInit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InflationInitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="InflationInitResult" nillable="true" type="q16:ResponseInflationInit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateInflationRateList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="ycd" nillable="true" type="q17:InflationCurveSnapshot" />
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="discountDates" nillable="true" type="q18:ArrayOfdateTime" />
+        <xs:element minOccurs="0" name="ifToDraw" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateInflationRateListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="CalculateInflationRateListResult" nillable="true" type="q19:ResponseDiscountsList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitData">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="InitDataResult" nillable="true" type="q20:ResponseInitData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEntryPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isDemo" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllEntryPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetAllEntryPointsResult" nillable="true" type="q21:ResponseGetAllEntryPointsData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntryPointByInstrument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="instr" nillable="true" type="q22:Instrument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntryPointByInstrumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetEntryPointByInstrumentResult" nillable="true" type="q23:ResponseEntryPointsByInstrument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEntryPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="ep" nillable="true" type="q24:EntryPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEntryPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="UpdateEntryPointResult" nillable="true" type="q25:ResponseUpdateEntryPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEntryPoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="ep" nillable="true" type="q26:EntryPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEntryPointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="AddEntryPointResult" nillable="true" type="q27:ResponseAddEntryPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEntryPointHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="epl" nillable="true" type="q28:ArrayOfEntryPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddEntryPointHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="AddEntryPointHistoryResult" nillable="true" type="q29:ResponseAddEntryPointHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYieldCurveDefinitions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYieldCurveDefinitionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetYieldCurveDefinitionsResult" nillable="true" type="q30:ResponseYieldCurveDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYcHistoricEntryPoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ycDef" nillable="true" type="q31:YieldCurveDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYcHistoricEntryPointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="GetYcHistoricEntryPointsResult" nillable="true" type="q32:ResponseEntryPointHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateDiscountedData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ycDef" nillable="true" type="q33:YieldCurveDefinition" />
+        <xs:element minOccurs="0" name="settlementDate" type="xs:dateTime" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="entryPoints" nillable="true" type="q34:ArrayOfEntryPoint" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="discountDates" nillable="true" type="q35:ArrayOfdateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CalculateDiscountedDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/YieldCurveWcf" minOccurs="0" name="CalculateDiscountedDataResult" nillable="true" type="q36:ResponseDiscountedData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConfirmUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogoutUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataLayer" />
+  <xs:complexType name="ArrayOfKeyValueOflongBondq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongBondq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q1:Bond" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongBondq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongBondq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongCurrencyq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongCurrencyq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q2:Currency" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongCurrencyq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongCurrencyq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongDayCounterq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongDayCounterq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q3:DayCounter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongDayCounterq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongDayCounterq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongRateq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongRateq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q4:Rate" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongRateq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongRateq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongExchangeRateq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongExchangeRateq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q5:ExchangeRate" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongExchangeRateq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongExchangeRateq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongYieldCurveDataq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongYieldCurveDataq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q6:YieldCurveData" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongYieldCurveDataq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongYieldCurveDataq7tfFZ9B" />
+  <xs:complexType name="ArrayOfdateTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdateTime" nillable="true" type="tns:ArrayOfdateTime" />
+  <xs:complexType name="ArrayOfKeyValueOflongInflationBondq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInflationBondq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q7:InflationBond" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInflationBondq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongInflationBondq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongInflationCurveDataq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInflationCurveDataq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q8:InflationCurveData" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInflationCurveDataq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongInflationCurveDataq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongInflationCurveEntryDataq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInflationCurveEntryDataq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q9:InflationCurveEntryData" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInflationCurveEntryDataq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongInflationCurveEntryDataq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongInflationIndexq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInflationIndexq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q10:InflationIndex" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInflationIndexq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongInflationIndexq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongInflationRateq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongInflationRateq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q11:InflationRate" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongInflationRateq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongInflationRateq7tfFZ9B" />
+  <xs:complexType name="ArrayOfKeyValueOflongRateHistoryq7tfFZ9B">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOflongRateHistoryq7tfFZ9B">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="xs:long" />
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DataLayer" name="Value" nillable="true" type="q12:RateHistory" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOflongRateHistoryq7tfFZ9B" nillable="true" type="tns:ArrayOfKeyValueOflongRateHistoryq7tfFZ9B" />
+  <xs:complexType name="ArrayOfdouble">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="double" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
+</xs:schema>

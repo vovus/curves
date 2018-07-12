@@ -1,0 +1,65 @@
+﻿<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="../ccs/ycFamTree.css">
+
+	<!-- chart -->
+    <script type="text/javascript" src="../JS/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../JS/chart/dygraph-combined.js"></script>
+    <!--
+    <script type="text/javascript" src="../JS/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="../JS/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../JS/jquery.js"></script>
+    -->
+	<script type="text/javascript" src="../JS/ycFamTree.js"></script>
+    <script type="text/javascript" src="../JS/ycChart.js"></script>
+	<script type="text/javascript" src="../JS/ycGrid.js"></script>
+
+	<!-- Grid -->
+	<link rel="stylesheet" type="text/css" media="screen" href="../ccs/grid/ui.jqgrid.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../ccs/grid/jquery-ui.min.css" />
+	<!--
+	<link rel="stylesheet" type="text/css" media="screen" href="../ccs/grid/jquery-ui.theme.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../ccs/grid/jquery-ui.structure.min.css" />
+	-->
+
+	<script src="../JS/grid/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="../JS/grid/i18n/grid.locale-en.js" type="text/javascript"></script>
+	<script src="../JS/grid/jquery.jqGrid.min.js" type="text/javascript"></script>
+	<script src="../JS/grid/jquery-ui.min.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+    
+	<table border="1">
+		<tr>
+			<td><div id="ycFamTree" style="width: 150px; height: 400px;"></div></td>
+			<td><div id="ycChart" style="width: 900px; height: 400px;"></div></td>
+		</tr>
+	</table>
+
+	<!-- grid -->
+	<table>
+		<tr>
+			<td><table id="entry"><tr><td></td></tr></table><div id="pager"></div></td>
+			<td><table id="zc"><tr><td></td></tr></table></td>
+		</tr>
+	</table>
+    
+	<!-- 
+    <div id="pager"></div>
+	-->
+
+    <script type="text/javascript" >
+    	// ccy/yc tree
+    	document.getElementById("ycFamTree").innerHTML = buildTree();
+		// yc chart
+    	//drawChart('20-08-2013', '3');
+
+    	// drawGrid
+    	//drawGridEntry();
+    	//drawGridZC();
+    </script>
+
+  </body>
+</html>

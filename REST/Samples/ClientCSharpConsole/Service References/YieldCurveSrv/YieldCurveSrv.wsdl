@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="YieldCurveSrv" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/YieldCurveWcf" />
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataLayer" />
+      <xsd:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IYieldCurveSrv_Init_InputMessage">
+    <wsdl:part name="parameters" element="tns:Init" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_Init_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYcFamilyDataList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYcFamilyDataList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYcFamilyDataList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYcFamilyDataListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYieldCurveDataDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYieldCurveDataDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYieldCurveDataDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYieldCurveDataDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetCurrencyDataDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyDataDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetCurrencyDataDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyDataDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetRateDataDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRateDataDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetRateDataDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRateDataDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetBondDataDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondDataDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetBondDataDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBondDataDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetDayCounterDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDayCounterDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetDayCounterDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDayCounterDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetEntryPointHistoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntryPointHistoryList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetEntryPointHistoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntryPointHistoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateDiscountedRateList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateDiscountedRateList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateDiscountedRateList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateDiscountedRateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetExchangeRateDataDic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateDataDic" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetExchangeRateDataDic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateDataDicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetExchangeRateHistoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateHistoryList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetExchangeRateHistoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeRateHistoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetMaturityDatesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaturityDatesList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetMaturityDatesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaturityDatesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_InflationInit_InputMessage">
+    <wsdl:part name="parameters" element="tns:InflationInit" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_InflationInit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InflationInitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateInflationRateList_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInflationRateList" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateInflationRateList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateInflationRateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_InitData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitData" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_InitData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetAllEntryPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEntryPoints" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetAllEntryPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEntryPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetEntryPointByInstrument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntryPointByInstrument" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetEntryPointByInstrument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntryPointByInstrumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_UpdateEntryPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntryPoint" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_UpdateEntryPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntryPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_AddEntryPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntryPoint" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_AddEntryPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntryPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_AddEntryPointHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntryPointHistory" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_AddEntryPointHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEntryPointHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYieldCurveDefinitions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYieldCurveDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYieldCurveDefinitions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYieldCurveDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYcHistoricEntryPoints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYcHistoricEntryPoints" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_GetYcHistoricEntryPoints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYcHistoricEntryPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateDiscountedData_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateDiscountedData" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CalculateDiscountedData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateDiscountedDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_ConfirmUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUser" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_ConfirmUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_LoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_LoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_LogoutUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUser" />
+  </wsdl:message>
+  <wsdl:message name="IYieldCurveSrv_LogoutUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IYieldCurveSrv">
+    <wsdl:operation name="Init">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/Init" message="tns:IYieldCurveSrv_Init_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/InitResponse" message="tns:IYieldCurveSrv_Init_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYcFamilyDataList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYcFamilyDataList" message="tns:IYieldCurveSrv_GetYcFamilyDataList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYcFamilyDataListResponse" message="tns:IYieldCurveSrv_GetYcFamilyDataList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYieldCurveDataDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDataDic" message="tns:IYieldCurveSrv_GetYieldCurveDataDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDataDicResponse" message="tns:IYieldCurveSrv_GetYieldCurveDataDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyDataDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetCurrencyDataDic" message="tns:IYieldCurveSrv_GetCurrencyDataDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetCurrencyDataDicResponse" message="tns:IYieldCurveSrv_GetCurrencyDataDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRateDataDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetRateDataDic" message="tns:IYieldCurveSrv_GetRateDataDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetRateDataDicResponse" message="tns:IYieldCurveSrv_GetRateDataDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBondDataDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetBondDataDic" message="tns:IYieldCurveSrv_GetBondDataDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetBondDataDicResponse" message="tns:IYieldCurveSrv_GetBondDataDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDayCounterDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetDayCounterDic" message="tns:IYieldCurveSrv_GetDayCounterDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetDayCounterDicResponse" message="tns:IYieldCurveSrv_GetDayCounterDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntryPointHistoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetEntryPointHistoryList" message="tns:IYieldCurveSrv_GetEntryPointHistoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetEntryPointHistoryListResponse" message="tns:IYieldCurveSrv_GetEntryPointHistoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDiscountedRateList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedRateList" message="tns:IYieldCurveSrv_CalculateDiscountedRateList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedRateListResponse" message="tns:IYieldCurveSrv_CalculateDiscountedRateList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRateDataDic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetExchangeRateDataDic" message="tns:IYieldCurveSrv_GetExchangeRateDataDic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetExchangeRateDataDicResponse" message="tns:IYieldCurveSrv_GetExchangeRateDataDic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRateHistoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetExchangeRateHistoryList" message="tns:IYieldCurveSrv_GetExchangeRateHistoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetExchangeRateHistoryListResponse" message="tns:IYieldCurveSrv_GetExchangeRateHistoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaturityDatesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetMaturityDatesList" message="tns:IYieldCurveSrv_GetMaturityDatesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetMaturityDatesListResponse" message="tns:IYieldCurveSrv_GetMaturityDatesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InflationInit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/InflationInit" message="tns:IYieldCurveSrv_InflationInit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/InflationInitResponse" message="tns:IYieldCurveSrv_InflationInit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInflationRateList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateInflationRateList" message="tns:IYieldCurveSrv_CalculateInflationRateList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateInflationRateListResponse" message="tns:IYieldCurveSrv_CalculateInflationRateList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/InitData" message="tns:IYieldCurveSrv_InitData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/InitDataResponse" message="tns:IYieldCurveSrv_InitData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEntryPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetAllEntryPoints" message="tns:IYieldCurveSrv_GetAllEntryPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetAllEntryPointsResponse" message="tns:IYieldCurveSrv_GetAllEntryPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntryPointByInstrument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetEntryPointByInstrument" message="tns:IYieldCurveSrv_GetEntryPointByInstrument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetEntryPointByInstrumentResponse" message="tns:IYieldCurveSrv_GetEntryPointByInstrument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntryPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/UpdateEntryPoint" message="tns:IYieldCurveSrv_UpdateEntryPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/UpdateEntryPointResponse" message="tns:IYieldCurveSrv_UpdateEntryPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEntryPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/AddEntryPoint" message="tns:IYieldCurveSrv_AddEntryPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/AddEntryPointResponse" message="tns:IYieldCurveSrv_AddEntryPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEntryPointHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/AddEntryPointHistory" message="tns:IYieldCurveSrv_AddEntryPointHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/AddEntryPointHistoryResponse" message="tns:IYieldCurveSrv_AddEntryPointHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYieldCurveDefinitions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDefinitions" message="tns:IYieldCurveSrv_GetYieldCurveDefinitions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDefinitionsResponse" message="tns:IYieldCurveSrv_GetYieldCurveDefinitions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYcHistoricEntryPoints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYcHistoricEntryPoints" message="tns:IYieldCurveSrv_GetYcHistoricEntryPoints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/GetYcHistoricEntryPointsResponse" message="tns:IYieldCurveSrv_GetYcHistoricEntryPoints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDiscountedData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedData" message="tns:IYieldCurveSrv_CalculateDiscountedData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedDataResponse" message="tns:IYieldCurveSrv_CalculateDiscountedData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/CreateUser" message="tns:IYieldCurveSrv_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/CreateUserResponse" message="tns:IYieldCurveSrv_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/ConfirmUser" message="tns:IYieldCurveSrv_ConfirmUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/ConfirmUserResponse" message="tns:IYieldCurveSrv_ConfirmUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/LoginUser" message="tns:IYieldCurveSrv_LoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/LoginUserResponse" message="tns:IYieldCurveSrv_LoginUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IYieldCurveSrv/LogoutUser" message="tns:IYieldCurveSrv_LogoutUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IYieldCurveSrv/LogoutUserResponse" message="tns:IYieldCurveSrv_LogoutUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IYieldCurveSrv" type="tns:IYieldCurveSrv">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Init">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/Init" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYcFamilyDataList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetYcFamilyDataList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYieldCurveDataDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDataDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyDataDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetCurrencyDataDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRateDataDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetRateDataDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBondDataDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetBondDataDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDayCounterDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetDayCounterDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntryPointHistoryList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetEntryPointHistoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDiscountedRateList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedRateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRateDataDic">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetExchangeRateDataDic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRateHistoryList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetExchangeRateHistoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaturityDatesList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetMaturityDatesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InflationInit">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/InflationInit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInflationRateList">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/CalculateInflationRateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitData">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/InitData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEntryPoints">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetAllEntryPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntryPointByInstrument">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetEntryPointByInstrument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntryPoint">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/UpdateEntryPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEntryPoint">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/AddEntryPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEntryPointHistory">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/AddEntryPointHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYieldCurveDefinitions">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetYieldCurveDefinitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYcHistoricEntryPoints">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/GetYcHistoricEntryPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateDiscountedData">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/CalculateDiscountedData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUser">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/ConfirmUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginUser">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/LoginUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap:operation soapAction="http://tempuri.org/IYieldCurveSrv/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YieldCurveSrv">
+    <wsdl:port name="BasicHttpBinding_IYieldCurveSrv" binding="tns:BasicHttpBinding_IYieldCurveSrv">
+      <soap:address location="http://localhost:58596/YieldCurveSrv.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5EF6812-B2FF-4EF5-ABA7-7055C3D7068A}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YieldCurveSL</RootNamespace>
+    <AssemblyName>YieldCurveSL</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>YieldCurveSL.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>YieldCurveSL.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT,__VC10__</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT,__VC10__</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT,__VC10__</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lite.ExcelLibrary">
+      <HintPath>..\3rd\Lite.ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Lite.Library">
+      <HintPath>..\3rd\Lite.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-Data.4.2010.4\lib\sl4\System.Windows.Controls.Data.DataForm.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-Data.4.2010.4\lib\sl4\System.Windows.Controls.Data.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-DataViz.4.2010.4\lib\sl4\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-Input.4.2010.4\lib\sl4\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-Layout.4.2010.4\lib\sl4\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\SilverlightToolkit-Core.4.2010.4\lib\sl4\System.Windows.Controls.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Serialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BondGUI.xaml.cs">
+      <DependentUpon>BondGUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CacheData.cs" />
+    <Compile Include="ColorPicker\ColorBoard.cs" />
+    <Compile Include="ColorPicker\ColorFromString.cs" />
+    <Compile Include="ColorPicker\ColorHelper.cs" />
+    <Compile Include="ColorPicker\ColorPicker.cs" />
+    <Compile Include="ColorPicker\PredefinedColor.cs" />
+    <Compile Include="ColorPicker\PredefinedColorItem.cs" />
+    <Compile Include="DataFeed\BondControl.xaml.cs">
+      <DependentUpon>BondControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataFeed\RateControl.xaml.cs">
+      <DependentUpon>RateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataFeed\RateDepositControl.xaml.cs">
+      <DependentUpon>RateDepositControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataFeed\RateSwapControl.xaml.cs">
+      <DependentUpon>RateSwapControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataFeed\DataFeed.xaml.cs">
+      <DependentUpon>DataFeed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InflationRateGUI.xaml.cs">
+      <DependentUpon>InflationRateGUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewSettings.xaml.cs">
+      <DependentUpon>NewSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RangeSlider.cs" />
+    <Compile Include="RateGUI.xaml.cs">
+      <DependentUpon>RateGUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\YieldCurveSrv\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="BondGUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataFeed\BondControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataFeed\RateControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataFeed\RateDepositControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataFeed\RateSwapControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataFeed\DataFeed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InflationRateGUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RateGUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseAddEntryPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseAddEntryPointHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseBondData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseCurrencyData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseDayCounterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseDiscountedData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseDiscountsList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseEntryPointHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseEntryPointsByInstrument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseExchangeRateData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseGetAllEntryPointsData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseInflationInit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseInit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseInitData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseMaturityDatesData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseRateData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseUpdateEntryPoint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseYcFamilyData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseYieldCurveData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSL.YieldCurveSrv.ResponseYieldCurveDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv.disco" />
+    <None Include="Service References\YieldCurveSrv\configuration91.svcinfo" />
+    <None Include="Service References\YieldCurveSrv\configuration.svcinfo" />
+    <None Include="Service References\YieldCurveSrv\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv.wsdl" />
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YieldCurveSrv\YieldCurveSrv5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Images\Twocurve.png" />
+    <Resource Include="Images\Onecurve.png" />
+    <Resource Include="Images\Ccy\AUD1.png" />
+    <Resource Include="Images\Ccy\CHF1.png" />
+    <Resource Include="Images\Ccy\EUR1.png" />
+    <Resource Include="Images\Ccy\GBP1.png" />
+    <Resource Include="Images\Ccy\JPY1.png" />
+    <Resource Include="Images\Ccy\USD1.png" />
+    <Resource Include="Images\Ccy\JPY.png" />
+    <Resource Include="Images\Ccy\EUR.png" />
+    <Resource Include="Images\Ccy\GBP.png" />
+    <Resource Include="Images\Ccy\USD.png" />
+    <Resource Include="Images\Ccy\CHF.png" />
+    <Resource Include="Images\Ccy\AUD.png" />
+    <Resource Include="Images\Ccy\aud3.png" />
+    <Resource Include="Images\Ccy\chf3.png" />
+    <Resource Include="Images\Ccy\eur3.png" />
+    <Resource Include="Images\Ccy\gbp3.png" />
+    <Resource Include="Images\Ccy\jpy3.png" />
+    <Resource Include="Images\Ccy\usd3.png" />
+    <Resource Include="Images\Refresh.png" />
+    <Resource Include="Images\Settings.png" />
+    <Content Include="Images\Refresh.ico" />
+    <Content Include="Images\Settings.ico" />
+    <Resource Include="Themes\Transparent.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\YieldCurveSrv\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

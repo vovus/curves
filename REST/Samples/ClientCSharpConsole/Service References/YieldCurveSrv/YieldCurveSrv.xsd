@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/YieldCurveWcf" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/YieldCurveWcf" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataLayer" />
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/" />
+  <xs:complexType name="ResponseInit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="tns:ResponseBondData" />
+      <xs:element minOccurs="0" name="ccy" nillable="true" type="tns:ResponseCurrencyData" />
+      <xs:element minOccurs="0" name="dc" nillable="true" type="tns:ResponseDayCounterData" />
+      <xs:element minOccurs="0" name="edh" nillable="true" type="tns:ResponseEntryPointHistory" />
+      <xs:element minOccurs="0" name="r" nillable="true" type="tns:ResponseRateData" />
+      <xs:element minOccurs="0" name="xr" nillable="true" type="tns:ResponseExchangeRateData" />
+      <xs:element minOccurs="0" name="xrh" nillable="true" type="tns:ResponseEntryPointHistory" />
+      <xs:element minOccurs="0" name="yc" nillable="true" type="tns:ResponseYieldCurveData" />
+      <xs:element minOccurs="0" name="ycf" nillable="true" type="tns:ResponseYcFamilyData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInit" nillable="true" type="tns:ResponseInit" />
+  <xs:complexType name="CustomException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InnerException" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomException" nillable="true" type="tns:CustomException" />
+  <xs:complexType name="ResponseBondData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BondDic" nillable="true" type="q1:ArrayOfKeyValueOflongBondq7tfFZ9B" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBondData" nillable="true" type="tns:ResponseBondData" />
+  <xs:complexType name="ResponseCurrencyData">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CurrencyDic" nillable="true" type="q2:ArrayOfKeyValueOflongCurrencyq7tfFZ9B" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseCurrencyData" nillable="true" type="tns:ResponseCurrencyData" />
+  <xs:complexType name="ResponseDayCounterData">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DayCounterDic" nillable="true" type="q3:ArrayOfKeyValueOflongDayCounterq7tfFZ9B" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDayCounterData" nillable="true" type="tns:ResponseDayCounterData" />
+  <xs:complexType name="ResponseEntryPointHistory">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="EntryPointHistoryList" nillable="true" type="q4:ArrayOfEntryPointHistory" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseEntryPointHistory" nillable="true" type="tns:ResponseEntryPointHistory" />
+  <xs:complexType name="ResponseRateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RateDic" nillable="true" type="q5:ArrayOfKeyValueOflongRateq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseRateData" nillable="true" type="tns:ResponseRateData" />
+  <xs:complexType name="ResponseExchangeRateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="XRateDic" nillable="true" type="q6:ArrayOfKeyValueOflongExchangeRateq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseExchangeRateData" nillable="true" type="tns:ResponseExchangeRateData" />
+  <xs:complexType name="ResponseYieldCurveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="YieldCurveDataDic" nillable="true" type="q7:ArrayOfKeyValueOflongYieldCurveDataq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseYieldCurveData" nillable="true" type="tns:ResponseYieldCurveData" />
+  <xs:complexType name="ResponseYcFamilyData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="YcFamilyList" nillable="true" type="q8:ArrayOfYieldCurveFamily" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseYcFamilyData" nillable="true" type="tns:ResponseYcFamilyData" />
+  <xs:complexType name="ResponseDiscountsList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element minOccurs="0" name="YcId" type="xs:int" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="discountPoints" nillable="true" type="q9:ArrayOfDiscountPoint" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="entryPoints" nillable="true" type="q10:ArrayOfEntryPoint" />
+      <xs:element minOccurs="0" name="ifToDraw" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDiscountsList" nillable="true" type="tns:ResponseDiscountsList" />
+  <xs:complexType name="ResponseMaturityDatesData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dates" nillable="true" type="q11:ArrayOfdateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseMaturityDatesData" nillable="true" type="tns:ResponseMaturityDatesData" />
+  <xs:complexType name="ResponseInflationInit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element minOccurs="0" name="ib" nillable="true" type="tns:ResponseInflationBondData" />
+      <xs:element minOccurs="0" name="ic" nillable="true" type="tns:ResponseInflationCurveData" />
+      <xs:element minOccurs="0" name="iced" nillable="true" type="tns:ResponseInflationCurveEntryData" />
+      <xs:element minOccurs="0" name="icf" nillable="true" type="tns:ResponseInflationFamilyData" />
+      <xs:element minOccurs="0" name="ii" nillable="true" type="tns:ResponseInflationIndexData" />
+      <xs:element minOccurs="0" name="ir" nillable="true" type="tns:ResponseInflationRateData" />
+      <xs:element minOccurs="0" name="rh" nillable="true" type="tns:ResponseRateHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationInit" nillable="true" type="tns:ResponseInflationInit" />
+  <xs:complexType name="ResponseInflationBondData">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BondDic" nillable="true" type="q12:ArrayOfKeyValueOflongInflationBondq7tfFZ9B" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationBondData" nillable="true" type="tns:ResponseInflationBondData" />
+  <xs:complexType name="ResponseInflationCurveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationCurveDataDic" nillable="true" type="q13:ArrayOfKeyValueOflongInflationCurveDataq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationCurveData" nillable="true" type="tns:ResponseInflationCurveData" />
+  <xs:complexType name="ResponseInflationCurveEntryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationCurveEntryDataDic" nillable="true" type="q14:ArrayOfKeyValueOflongInflationCurveEntryDataq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationCurveEntryData" nillable="true" type="tns:ResponseInflationCurveEntryData" />
+  <xs:complexType name="ResponseInflationFamilyData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="InflationFamilyList" nillable="true" type="q15:ArrayOfYieldCurveFamily" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationFamilyData" nillable="true" type="tns:ResponseInflationFamilyData" />
+  <xs:complexType name="ResponseInflationIndexData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationDic" nillable="true" type="q16:ArrayOfKeyValueOflongInflationIndexq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationIndexData" nillable="true" type="tns:ResponseInflationIndexData" />
+  <xs:complexType name="ResponseInflationRateData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationRateDic" nillable="true" type="q17:ArrayOfKeyValueOflongInflationRateq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInflationRateData" nillable="true" type="tns:ResponseInflationRateData" />
+  <xs:complexType name="ResponseRateHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationBondsHistoryDic" nillable="true" type="q18:ArrayOfKeyValueOflongRateHistoryq7tfFZ9B" />
+      <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationIndexHistoryDic" nillable="true" type="q19:ArrayOfKeyValueOflongRateHistoryq7tfFZ9B" />
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InflationRateHistoryDic" nillable="true" type="q20:ArrayOfKeyValueOflongRateHistoryq7tfFZ9B" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseRateHistory" nillable="true" type="tns:ResponseRateHistory" />
+  <xs:complexType name="ResponseInitData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="ccyList" nillable="true" type="q21:ArrayOfCurrency" />
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="instrList" nillable="true" type="q22:ArrayOfInstrument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseInitData" nillable="true" type="tns:ResponseInitData" />
+  <xs:complexType name="ResponseGetAllEntryPointsData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="epl" nillable="true" type="q23:ArrayOfEntryPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseGetAllEntryPointsData" nillable="true" type="tns:ResponseGetAllEntryPointsData" />
+  <xs:complexType name="ResponseEntryPointsByInstrument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseEntryPointsByInstrument" nillable="true" type="tns:ResponseEntryPointsByInstrument" />
+  <xs:complexType name="ResponseUpdateEntryPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseUpdateEntryPoint" nillable="true" type="tns:ResponseUpdateEntryPoint" />
+  <xs:complexType name="ResponseAddEntryPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseAddEntryPoint" nillable="true" type="tns:ResponseAddEntryPoint" />
+  <xs:complexType name="ResponseAddEntryPointHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseAddEntryPointHistory" nillable="true" type="tns:ResponseAddEntryPointHistory" />
+  <xs:complexType name="ResponseYieldCurveDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ycDefList" nillable="true" type="q24:ArrayOfYieldCurveDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseYieldCurveDefinition" nillable="true" type="tns:ResponseYieldCurveDefinition" />
+  <xs:complexType name="ResponseDiscountedData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:CustomException" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="discountPoints" nillable="true" type="q25:ArrayOfDiscountPoint" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/DataLayer" minOccurs="0" name="entryPoints" nillable="true" type="q26:ArrayOfEntryPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseDiscountedData" nillable="true" type="tns:ResponseDiscountedData" />
+</xs:schema>

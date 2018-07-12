@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:58596/YieldCurveSrv.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/DataLayer" />
+  <xs:complexType name="ArrayOfYieldCurveDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="YieldCurveDefinition" nillable="true" type="tns:YieldCurveDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfYieldCurveDefinition" nillable="true" type="tns:ArrayOfYieldCurveDefinition" />
+  <xs:complexType name="YieldCurveDefinition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/DataLayer" base="q1:YieldCurveSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrencyId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="YieldCurveDefinition" nillable="true" type="tns:YieldCurveDefinition" />
+</xs:schema>
