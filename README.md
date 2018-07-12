@@ -1,4 +1,4 @@
 
-REST corresponds to (rest.mathter.com)
-WCF corresponds to (wcf.mathter.com)
+REST corresponds to http://rest.mathter.com<br/>
+WCF corresponds to http://wcf.mathter.com
 
